@@ -20,7 +20,7 @@
                                     <div>
                                         <x-label for="quantity" :value="__('Quantity')" />
                                         <x-input id="quantity" class="block mt-1 w-full" type="text" name="quantity" 
-                                        value="" required autofocus onfocusout="calculateSellingPrice()"/>
+                                        value="" required onfocusout="calculateSellingPrice()"/>
                                     </div>
                             </div>
                             <div class="w-full md:w-1/2 px-3 m-5">
@@ -38,7 +38,8 @@
                                 <!-- Selling Price -->
                                 <div>
                                     <x-label for="selling_price" :value="__('Selling Price')" />
-                                    <x-input id="selling_price" disabled="disabled" class="block mt-1 w-full" type="text" name="selling_price" value=""  />
+                                    <x-input id="selling_price" disabled="disabled" class="block mt-1 w-full"
+                                    type="text" name="selling_price" value="0.00"  />
                                 </div>
                             </div>
                             
