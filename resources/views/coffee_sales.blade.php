@@ -16,12 +16,24 @@
                         @csrf
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 gap-y-0.5">
-                                    <!-- Quantity -->
-                                    <div>
-                                        <x-label for="quantity" :value="__('Quantity')" />
-                                        <x-input id="quantity" class="block mt-1 w-full" type="text" name="quantity" 
-                                        value="" required onfocusout="calculateSellingPrice()"/>
-                                    </div>
+                                <!-- Product -->
+                                <div>
+                                    <x-label for="quantity" :value="__('Product')" />
+                                    <select id="product" class="bg-gray-50 border border-gray-300" name="product_id" required>
+                                        <option selected value="">Choose a Coffee</option>
+                                        @foreach ($products as $product)
+                                            <option value="{{$product['id']}}">{{$product['name']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>                              
+                            <div class="w-full md:w-1/2 px-3 mb-6 gap-y-0.5">
+                                <!-- Quantity -->
+                                <div>
+                                    <x-label for="quantity" :value="__('Quantity')" />
+                                    <x-input id="quantity" class="block mt-1 w-full" type="text" name="quantity" 
+                                    value="" required onfocusout="calculateSellingPrice()"/>
+                                </div>
                             </div>
                             <div class="w-full md:w-1/2 px-3 m-5">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">

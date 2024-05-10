@@ -14,3 +14,7 @@ Documentation should be kept in the `docs` folder
 ----
 
 Made with ♥ by [Cyber-Duck Ltd](https://www.cyber-duck.co.uk).
+
+Run product seeder if not already run 
+
+ php artisan db:seed --class=ProductSeeder

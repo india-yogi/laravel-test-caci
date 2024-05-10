@@ -13,7 +13,7 @@ class SalesRepository implements SalesRepositoryInterface
      */
     public function getAllSales() 
     {
-        return Sales::all();
+        return Sales::with('product')->orderBy('id', 'DESC')->get();
     }
 
     /**

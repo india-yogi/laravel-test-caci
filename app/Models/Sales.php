@@ -14,6 +14,7 @@ class Sales extends Model
         'quantity',
         'unit_cost',
         'selling_price',
+        'product_id'
     ];
 
     protected $casts = [
@@ -47,4 +48,9 @@ class Sales extends Model
     // {
     //     $this->attributes['selling_price'] = number_format($value, 2);
     // }    
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }    
 }
